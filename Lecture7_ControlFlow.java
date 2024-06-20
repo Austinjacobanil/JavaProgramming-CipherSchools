@@ -60,6 +60,12 @@ public class Lecture7_ControlFlow{
             case 'c':
             System.out.println("Hi, I am C");
                 break;
+            default:
+            System.out.println("I am not A, B or C");
+
+            
         }
+        System.out.println("After switch");
+        
 }
 }
