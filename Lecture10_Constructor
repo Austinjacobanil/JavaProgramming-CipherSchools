@@ -1,0 +1,69 @@
+//SUPER Keyword
+
+class Loan{
+    int rate;
+
+    Loan(){
+        System.out.println("Hi I am a default constructor of loan");
+    }
+    Loan(int rate){
+        this.rate = rate;
+    }
+    void printRate(){
+        System.out.println(this.rate);
+    }
+}
+
+class CarLoan extends Loan{
+    int rate;
+    CarLoan(){
+        System.out.println("Hi I am a default constructor of carLoan");
+        System.out.println(super.rate); // Using super to access instance variable of parent class
+    }
+    CarLoan(int rate){
+        super(7); //Using super to invoke the constructor of the parent class. Must be the first line of child constructor
+        this.rate = rate;
+    }   
+    void printRate(){
+        System.out.println(this.rate);
+        super.printRate(); //Using super to invoke the methods of parent class
+        System.out.println(super.rate);
+    }
+}
+
+public class SuperStudy{
+    public static void main(String[] args){
+        CarLoan cl = new CarLoan();
+        CarLoan cl2 = new CarLoan(8);
+        cl.printRate();
+    }
+}
+
+
+
+
+
+
+//FINAL Keyword
+
+// class A{
+//     final noOfAlphabets = 26; // Final variables - once assigned cannot be changed
+//     final noOfDigits; //Either assign the value at the time of declaration or inside a constructor
+//     A(){
+//         noOfDigits = 10;
+//     }
+//     final void fun(){ // Final method
+//         System.out.println("I am a methid in class A");
+//     }
+// }
+// class B extends A{ // Final class cannot be inheritred
+//     // void fun(){ //final methods cannot be overridden
+
+//     // }
+// }
+
+// public class FinalStudy{
+//     public static void main(String[] args){
+        
+//     }
+// }
